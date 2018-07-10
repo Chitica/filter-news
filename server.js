@@ -20,7 +20,7 @@ var MONGODB_URI = process.env.MONGOLAB_YELLOW_URI || "mongodb://localhost/week18
 mongoose.Promise = Promise;
 mongoose.connect(MONGODB_URI);
 
-var PORT = 3000;
+var PORT = 5000;
 
 // Initialize Express
 var app = express();
@@ -149,6 +149,6 @@ app.post("/articles/:id", function(req, res) {
 });
 
 // Start the server
-app.listen(PORT, function() {
-  console.log("App running on port " + PORT + "!");
+app.listen(process.env.PORT || PORT, function() {
+  console.log("Server started.......");
 });
